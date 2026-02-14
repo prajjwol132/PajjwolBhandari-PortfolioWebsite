@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prajjwol Bhandari | Portfolio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Floating Shapes Background -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="brand-text">Prajjwol</span>
+                <span class="brand-dot">.</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-right" data-aos-duration="1200">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Prajjwol Bhandari</h1>
+                <div class="hero-typing">
+                    <span class="typed-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    Creative Developer | Video Editor | Designer
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary-custom">View My Work</a>
+                    <a href="#contact" class="btn btn-outline-custom">Contact Me</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                <div class="rotating-circle">
+                    <div class="circle-inner">
+                        <span>Web</span>
+                        <span>React</span>
+                        <span>Video</span>
+                        <span>Edit</span>
+                    </div>
+                </div>
+                <div class="profile-image">
+                    <img src="profile.png" alt="Prajjwol Bhandari" class="profile-img">
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="400">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Get to know</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="about-image-wrapper">
+                        <div class="about-image">
+                            <img src="profile.png" alt="Prajjwol Bhandari" class="about-profile-img">
+                        </div>
+                        <div class="experience-badge">
+                            <span class="exp-number">IT Student</span>
+                            <span class="exp-text">2nd<br>year</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="about-content">
+                        <h3>Creative IT Student</h3>
+                        <p>
+                            I'm a passionate IT student and creative professional specializing in 
+                            <strong>Web Development</strong>, <strong>React Development</strong>, 
+                            and <strong>Video Editing</strong>. I love transforming ideas into 
+                            beautiful, functional digital experiences that make an impact.
+                        </p>
+                        <p>
+                            With a keen eye for design and a love for innovation, I create 
+                            websites and videos that not only meet clients' needs but exceed 
+                            their expectations. Every project is an opportunity to learn and grow.
+                        </p>
+                        
+                        <div class="about-stats">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">What I Can Do</span>
+                <h2 class="section-title">My Skills</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML & CSS</h3>
+                    <p>Responsive web design with modern CSS techniques</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-progress="95"></div>
+                    </div>
+                    <span class="skill-percentage">95%</span>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>Interactive web applications and dynamic content</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-progress="85"></div>
+                    </div>
+                    <span class="skill-percentage">85%</span>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>React JS</h3>
+                    <p>Modern frontend development with React ecosystem</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-progress="80"></div>
+                    </div>
+                    <span class="skill-percentage">80%</span>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Editing</h3>
+                    <p>Professional video editing with cinematic effects</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-progress="90"></div>
+                    </div>
+                    <span class="skill-percentage">90%</span>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="skill-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Motion Graphics</h3>
+                    <p>Creative animations and visual storytelling</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-progress="75"></div>
+                    </div>
+                    <span class="skill-percentage">75%</span>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="skill-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Logo design, branding, and visual identity</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-progress="70"></div>
+                    </div>
+                    <span class="skill-percentage">70%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">My Work</span>
+                <h2 class="section-title">Projects</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <!-- Project Category Tabs -->
+            <div class="project-tabs" data-aos="fade-up" data-aos-delay="200">
+                <button class="tab-btn active" data-category="all">All Projects</button>
+                <button class="tab-btn" data-category="video">Video Editing</button>
+                <button class="tab-btn" data-category="react">React</button>
+                <button class="tab-btn" data-category="web">HTML/CSS</button>
+            </div>
+            
+            <!-- Video Editing Projects -->
+            <div class="project-category" data-category="video">
+                <h3 class="category-title" data-aos="fade-up">
+                    <i class="fas fa-video"></i> Video Editing Projects
+                </h3>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-card video-project">
+                            <div class="project-thumbnail">
+                                <div class="thumbnail-placeholder">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="project-overlay">
+                                    <a href="https://www.tiktok.com/@bhandari1007/video/7603985630355377409?is_from_webapp=1&sender_device=pc&web_id=7535100385633551890" target="_blank" class="play-btn">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+                                    <span>Watch this video</span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category-tag">Video Editing</span>
+                                <h4>Motion graphic video</h4>
+                                <p>Video with motion graphics and color grading</p>
+                                <div class="project-tools">
+                                    <span>Premiere Pro</span>
+                                    <span>Davinci Resolve</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-card video-project">
+                            <div class="project-thumbnail">
+                                <div class="thumbnail-placeholder">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="project-overlay">
+                                    <a href="https://www.tiktok.com/@bhandari1007/video/7587068305714711826?is_from_webapp=1&sender_device=pc&web_id=7535100385633551890" target="_blank" class="play-btn">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+                                    <span>Watch this video</span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category-tag">Video Editing</span>
+                                <h4>Music Video Edit</h4>
+                                <p>Dynamic music video with beat-synced transitions and visual effects</p>
+                                <div class="project-tools">
+                                    <span>Premiere Pro</span>
+                                    <span>DaVinci Resolve</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-card video-project">
+                            <div class="project-thumbnail">
+                                <div class="thumbnail-placeholder">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="project-overlay">
+                                    <a href="https://youtube.com/shorts/jUHXvdFIdhA?si=6ZwIZc-V5VEzfj4c" target="_blank" class="play-btn">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+                                    <span>Watch this video</span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category-tag">Video Editing</span>
+                                <h4>Documentary Short</h4>
+                                <p>Documentary style video with interviews and B-roll footage</p>
+                                <div class="project-tools">
+                                    <span>Premiere Pro</span>
+                                    <span>DaVinci Resolve</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- React Projects -->
+            <div class="project-category" data-category="react">
+                <h3 class="category-title" data-aos="fade-up">
+                    <i class="fab fa-react"></i> React Projects
+                </h3>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-card react-project">
+                            <div class="project-thumbnail react-thumb">
+                                <div class="thumbnail-placeholder react-placeholder">
+                                    <i class="fas fa-wallet"></i>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category-tag">React</span>
+                                <h4>Expense Tracker</h4>
+                                <p>Track your expenses with this React application featuring expense categorization</p>
+                                <div class="project-tools">
+                                    <span>React</span>
+                                    <span>Tailwind CSS</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://daily-expenses-trackerr.netlify.app/" target="_blank" class="btn-project">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-card react-project">
+                            <div class="project-thumbnail react-thumb">
+                                <div class="thumbnail-placeholder react-placeholder">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category-tag">React</span>
+                                <h4>E-Commerce Store</h4>
+                                <p>Full-featured shopping cart with product listing and checkout functionality</p>
+                                <div class="project-tools">
+                                    <span>React</span>
+                                    <span>Tailwind CSS</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://bhandariecommerceshopandservice.netlify.app/" target="_blank" class="btn-project">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-card react-project">
+                            <div class="project-thumbnail react-thumb">
+                                <div class="thumbnail-placeholder react-placeholder">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category-tag">React</span>
+                                <h4>Hotel booking</h4>
+                                <p>Book your stay at any hotel with this React application featuring search and booking functionality</p>
+                                <div class="project-tools">
+                                    <span>React</span>
+                                    <span>Tailwind CSS</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://react-js-proffessional-class-projec.vercel.app/" target="_blank" class="btn-project">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- HTML/CSS Projects -->
+            <div class="project-category" data-category="web">
+                <h3 class="category-title" data-aos="fade-up">
+                    <i class="fas fa-globe"></i> HTML & CSS Projects
+                </h3>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-card web-project">
+                            <div class="project-thumbnail web-thumb">
+                                <div class="thumbnail-placeholder web-placeholder">
+                                    <i class="fas fa-plane"></i>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category-tag">HTML/CSS</span>
+                                <h4>Travel Agency Website</h4>
+                                <p>Travel agency responsive website with modern design and animations</p>
+                                <div class="project-tools">
+                                    <span>HTML5</span>
+                                    <span>CSS</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://bhandaritravels.netlify.app/" target="_blank" class="btn-project">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-card web-project">
+                            <div class="project-thumbnail web-thumb">
+                                <div class="thumbnail-placeholder web-placeholder">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category-tag">HTML/CSS</span>
+                                <h4>YouTube Clone</h4>
+                                <p>Beautiful YouTube clone with responsive design</p>
+                                <div class="project-tools">
+                                    <span>HTML5</span>
+                                    <span>CSS</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://yotubeclone-by-prajjwolbhandari.netlify.app/" target="_blank" class="btn-project">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-card web-project">
+                            <div class="project-thumbnail web-thumb">
+                                <div class="thumbnail-placeholder web-placeholder">
+                                    <i class="fab fa-pinterest"></i>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category-tag">HTML/CSS</span>
+                                <h4>Pinterest Clone</h4>
+                                <p>Pinterest-style website with responsive design and flexible layout</p>
+                                <div class="project-tools">
+                                    <span>HTML5</span>
+                                    <span>CSS</span>
+
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://pinterestclonebyprajjwolbhandari.netlify.app/" target="_blank" class="btn-project">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="contact-info">
+                        <h3>Let's Work Together</h3>
+                        <p>Feel free to reach out if you have any questions or want to collaborate on a project.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="contact-label">Email</span>
+                                    <a href="mailto:bhandariprajjwol094@gmail.com">bhandariprajjwol094@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="contact-label">LinkedIn</span>
+                                    <a href="https://www.linkedin.com/in/prajjwol-bhandari-a0464b372" target="_blank">linkedin.com/in/prajjwol</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="contact-label">GitHub</span>
+                                    <a href="https://github.com/prajjwol132" target="_blank">github.com/prajjwol132</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="mailto:bhandariprajjwol094@gmail.com" class="social-link" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/prajjwol-bhandari-a0464b372" target="_blank" class="social-link" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/prajjwol132" target="_blank" class="social-link" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.youtube.com" target="_blank" class="social-link" title="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://www.instagram.com/prajjwol_bhandari_/" target="_blank" class="social-link" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" class="form-input" placeholder=" " required>
+                                <label for="name" class="form-label">Your Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" class="form-input" placeholder=" " required>
+                                <label for="email" class="form-label">Your Email</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" class="form-input" placeholder=" " required>
+                            <label for="subject" class="form-label">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" class="form-input" placeholder=" " required></textarea>
+                            <label for="message" class="form-label">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="brand-text">Prajjwol</span>
+                    <span class="brand-dot">.</span>
+                </div>
+                <p class="footer-text">© 2026 Prajjwol Bhandari. All Rights Reserved.</p>
+                <div class="footer-social">
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
