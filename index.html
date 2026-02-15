@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prajjwol Bhandari | Portfolio</title>
@@ -9,33 +10,55 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Custom stylesheet for the portfolio -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Scroll Progress Bar -->
+    <!-- ============================================
+         SCROLL PROGRESS BAR
+         ============================================
+         Visual indicator at the top of the page that shows
+         how far the user has scrolled. Fills from left to right.
+    -->
     <div class="scroll-progress-container">
         <div class="scroll-progress-bar"></div>
     </div>
 
-    <!-- Floating Shapes Background -->
+    <!-- ============================================
+         FLOATING SHAPES BACKGROUND
+         ============================================
+         Decorative animated shapes that create visual interest
+         in the background. Moves with parallax effect on scroll.
+    -->
     <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
+        <div class="shape shape-1"></div>  <!-- Large gold circle -->
+        <div class="shape shape-2"></div>  <!-- Medium teal blob -->
+        <div class="shape shape-3"></div>  <!-- Small accent circle -->
+        <div class="shape shape-4"></div>  <!-- Medium gold blob -->
     </div>
 
-    <!-- Navigation -->
+    <!-- ============================================
+         NAVIGATION BAR
+         ============================================
+         Fixed navigation bar with logo and menu links.
+         Stays at the top of the viewport while scrolling.
+         Changes appearance when page is scrolled.
+    -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
+            <!-- Brand/Logo -->
             <a class="navbar-brand" href="#">
                 <span class="brand-text">Prajjwol</span>
                 <span class="brand-dot">.</span>
             </a>
+            
+            <!-- Mobile menu toggle button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+            <!-- Navigation menu links -->
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
@@ -49,40 +72,64 @@
     </nav>
 
 
-    <!-- Hero Section -->
+    <!-- ============================================
+         HERO SECTION
+         ============================================
+         Full-screen introduction section with:
+         - Name and title
+         - Typing effect showing different roles
+         - Profile image with rotating decorative circle
+         - Call-to-action buttons
+         - Scroll indicator
+    -->
     <section id="home" class="hero">
         <div class="hero-content">
+            <!-- Text content on the left -->
             <div class="hero-text" data-aos="fade-right" data-aos-duration="1200">
+                <!-- Greeting text -->
                 <p class="hero-greeting">Hello, I'm</p>
+                
+                <!-- Main name heading -->
                 <h1 class="hero-name">Prajjwol Bhandari</h1>
+                
+                <!-- Typing effect container -->
                 <div class="hero-typing">
-                    <span class="typed-text"></span>
-                    <span class="cursor">|</span>
+                    <span class="typed-text"></span>  <!-- Text is inserted by JavaScript -->
+                    <span class="cursor">|</span>      <!-- Blinking cursor -->
                 </div>
+                
+                <!-- Description below typing -->
                 <p class="hero-description">
                     Creative Developer | Video Editor | Designer
                 </p>
+                
+                <!-- Call-to-action buttons -->
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary-custom">View My Work</a>
                     <a href="#contact" class="btn btn-outline-custom">Contact Me</a>
                 </div>
             </div>
             
+            <!-- Visual content on the right -->
             <div class="hero-visual" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                <!-- Rotating decorative circle with text labels -->
                 <div class="rotating-circle">
                     <div class="circle-inner">
-                        <span>Web</span>
-                        <span>React</span>
-                        <span>Video</span>
-                        <span>Edit</span>
+                        <span>Web</span>      <!-- Top label -->
+                        <span>React</span>    <!-- Right label -->
+                        <span>Video</span>    <!-- Bottom label -->
+                        <span>Edit</span>     <!-- Left label -->
                     </div>
                 </div>
+                
+                <!-- Profile image in the center -->
                 <div class="profile-image">
                     <img src="profile.png" alt="Prajjwol Bhandari" class="profile-img">
                 </div>
             </div>
         </div>
         
+        <!-- Scroll indicator at the bottom -->
         <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="400">
             <div class="mouse">
                 <div class="wheel"></div>
@@ -92,9 +139,18 @@
     </section>
 
 
-    <!-- About Section -->
+    <!-- ============================================
+         ABOUT SECTION
+         ============================================
+         Personal information section with:
+         - Profile image with morphing shape
+         - Experience badge
+         - Bio text
+         - Statistics (if any)
+    -->
     <section id="about" class="about-section">
         <div class="container">
+            <!-- Section header with title -->
             <div class="section-header" data-aos="fade-up">
                 <span class="section-subtitle">Get to know</span>
                 <h2 class="section-title">About Me</h2>
@@ -102,11 +158,14 @@
             </div>
             
             <div class="row align-items-center">
+                <!-- Left column: Profile image -->
                 <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
                     <div class="about-image-wrapper">
+                        <!-- Profile image container with morphing animation -->
                         <div class="about-image">
                             <img src="profile.png" alt="Prajjwol Bhandari" class="about-profile-img">
                         </div>
+                        <!-- Experience badge showing student status -->
                         <div class="experience-badge">
                             <span class="exp-number">IT Student</span>
                             <span class="exp-text">2nd<br>year</span>
@@ -114,9 +173,11 @@
                     </div>
                 </div>
                 
+                <!-- Right column: About text content -->
                 <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <div class="about-content">
                         <h3>Creative IT Student</h3>
+                        <!-- Bio paragraph -->
                         <p>
                             I'm a passionate IT student and creative professional specializing in 
                             <strong>Web Development</strong>, <strong>React Development</strong>, 
@@ -129,6 +190,7 @@
                             their expectations. Every project is an opportunity to learn and grow.
                         </p>
                         
+                        <!-- Statistics container (currently empty, can be populated) -->
                         <div class="about-stats">
                             
                         </div>
@@ -139,28 +201,41 @@
     </section>
 
 
-    <!-- Skills Section -->
+    <!-- ============================================
+         SKILLS SECTION
+         ============================================
+         Grid of skill cards showing:
+         - Skill name and icon
+         - Description
+         - Progress bar showing proficiency level
+         - Percentage display
+    -->
     <section id="skills" class="skills-section">
         <div class="container">
+            <!-- Section header -->
             <div class="section-header" data-aos="fade-up">
                 <span class="section-subtitle">What I Can Do</span>
                 <h2 class="section-title">My Skills</h2>
                 <div class="title-line"></div>
             </div>
             
+            <!-- Skills grid -->
             <div class="skills-grid">
+                <!-- Skill Card 1: HTML & CSS -->
                 <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="skill-icon">
                         <i class="fab fa-html5"></i>
                     </div>
                     <h3>HTML & CSS</h3>
                     <p>Responsive web design with modern CSS techniques</p>
+                    <!-- Progress bar -->
                     <div class="skill-progress">
                         <div class="progress-bar" data-progress="95"></div>
                     </div>
                     <span class="skill-percentage">95%</span>
                 </div>
                 
+                <!-- Skill Card 2: JavaScript -->
                 <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="skill-icon">
                         <i class="fab fa-js"></i>
@@ -173,6 +248,7 @@
                     <span class="skill-percentage">85%</span>
                 </div>
                 
+                <!-- Skill Card 3: React JS -->
                 <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="skill-icon">
                         <i class="fab fa-react"></i>
@@ -185,6 +261,7 @@
                     <span class="skill-percentage">80%</span>
                 </div>
                 
+                <!-- Skill Card 4: Video Editing -->
                 <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="skill-icon">
                         <i class="fas fa-video"></i>
@@ -197,6 +274,7 @@
                     <span class="skill-percentage">90%</span>
                 </div>
                 
+                <!-- Skill Card 5: Motion Graphics -->
                 <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="skill-icon">
                         <i class="fas fa-film"></i>
@@ -209,6 +287,7 @@
                     <span class="skill-percentage">75%</span>
                 </div>
                 
+                <!-- Skill Card 6: Graphic Design -->
                 <div class="skill-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="skill-icon">
                         <i class="fas fa-palette"></i>
@@ -225,16 +304,29 @@
     </section>
 
 
-    <!-- Projects Section -->
+    <!-- ============================================
+         PROJECTS SECTION
+         ============================================
+         Portfolio showcase with:
+         - Category filter tabs
+         - Video editing projects
+         - React projects
+         - HTML/CSS projects
+    -->
     <section id="projects" class="projects-section">
         <div class="container">
+            <!-- Section header -->
             <div class="section-header" data-aos="fade-up">
                 <span class="section-subtitle">My Work</span>
                 <h2 class="section-title">Projects</h2>
                 <div class="title-line"></div>
             </div>
             
-            <!-- Project Category Tabs -->
+            <!-- ============================================
+                 PROJECT CATEGORY TABS
+                 ============================================
+                 Filter buttons to show projects by category
+            -->
             <div class="project-tabs" data-aos="fade-up" data-aos-delay="200">
                 <button class="tab-btn active" data-category="all">All Projects</button>
                 <button class="tab-btn" data-category="video">Video Editing</button>
@@ -242,18 +334,26 @@
                 <button class="tab-btn" data-category="web">HTML/CSS</button>
             </div>
             
-            <!-- Video Editing Projects -->
+            <!-- ============================================
+                 VIDEO EDITING PROJECTS
+                 ============================================
+                 Showcase of video editing work with play buttons
+                 linking to video content
+            -->
             <div class="project-category" data-category="video">
                 <h3 class="category-title" data-aos="fade-up">
                     <i class="fas fa-video"></i> Video Editing Projects
                 </h3>
                 <div class="row">
+                    <!-- Video Project 1: Motion Graphic Video -->
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-card video-project">
+                            <!-- Thumbnail with play overlay -->
                             <div class="project-thumbnail">
                                 <div class="thumbnail-placeholder">
                                     <i class="fas fa-play-circle"></i>
                                 </div>
+                                <!-- Overlay appears on hover -->
                                 <div class="project-overlay">
                                     <a href="https://www.tiktok.com/@bhandari1007/video/7603985630355377409?is_from_webapp=1&sender_device=pc&web_id=7535100385633551890" target="_blank" class="play-btn">
                                         <i class="fas fa-play"></i>
@@ -261,10 +361,12 @@
                                     <span>Watch this video</span>
                                 </div>
                             </div>
+                            <!-- Project information -->
                             <div class="project-info">
                                 <span class="project-category-tag">Video Editing</span>
                                 <h4>Motion graphic video</h4>
                                 <p>Video with motion graphics and color grading</p>
+                                <!-- Tools used -->
                                 <div class="project-tools">
                                     <span>Premiere Pro</span>
                                     <span>Davinci Resolve</span>
@@ -273,6 +375,7 @@
                         </div>
                     </div>
                     
+                    <!-- Video Project 2: Music Video Edit -->
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-card video-project">
                             <div class="project-thumbnail">
@@ -298,6 +401,7 @@
                         </div>
                     </div>
                     
+                    <!-- Video Project 3: Documentary Short -->
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="project-card video-project">
                             <div class="project-thumbnail">
@@ -325,12 +429,18 @@
                 </div>
             </div>
             
-            <!-- React Projects -->
+            <!-- ============================================
+                 REACT PROJECTS
+                 ============================================
+                 Showcase of React web applications with
+                 links to live demos
+            -->
             <div class="project-category" data-category="react">
                 <h3 class="category-title" data-aos="fade-up">
                     <i class="fab fa-react"></i> React Projects
                 </h3>
                 <div class="row">
+                    <!-- React Project 1: Expense Tracker -->
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-card react-project">
                             <div class="project-thumbnail react-thumb">
@@ -346,6 +456,7 @@
                                     <span>React</span>
                                     <span>Tailwind CSS</span>
                                 </div>
+                                <!-- Link to live project -->
                                 <div class="project-links">
                                     <a href="https://daily-expenses-trackerr.netlify.app/" target="_blank" class="btn-project">View Project</a>
                                 </div>
@@ -353,6 +464,7 @@
                         </div>
                     </div>
                     
+                    <!-- React Project 2: E-Commerce Store -->
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-card react-project">
                             <div class="project-thumbnail react-thumb">
@@ -375,6 +487,7 @@
                         </div>
                     </div>
                     
+                    <!-- React Project 3: Hotel Booking -->
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="project-card react-project">
                             <div class="project-thumbnail react-thumb">
@@ -399,12 +512,18 @@
                 </div>
             </div>
             
-            <!-- HTML/CSS Projects -->
+            <!-- ============================================
+                 HTML/CSS PROJECTS
+                 ============================================
+                 Showcase of static websites built with
+                 HTML and CSS
+            -->
             <div class="project-category" data-category="web">
                 <h3 class="category-title" data-aos="fade-up">
                     <i class="fas fa-globe"></i> HTML & CSS Projects
                 </h3>
                 <div class="row">
+                    <!-- Web Project 1: Travel Agency -->
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-card web-project">
                             <div class="project-thumbnail web-thumb">
@@ -427,6 +546,7 @@
                         </div>
                     </div>
                     
+                    <!-- Web Project 2: YouTube Clone -->
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-card web-project">
                             <div class="project-thumbnail web-thumb">
@@ -449,6 +569,7 @@
                         </div>
                     </div>
                     
+                    <!-- Web Project 3: Pinterest Clone -->
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="project-card web-project">
                             <div class="project-thumbnail web-thumb">
@@ -477,9 +598,13 @@
     </section>
 
 
-    <!-- Contact Section -->
+    <!-- ============================================
+         CONTACT SECTION
+         ============================================
+    -->
     <section id="contact" class="contact-section">
         <div class="container">
+            <!-- Section header -->
             <div class="section-header" data-aos="fade-up">
                 <span class="section-subtitle">Get In Touch</span>
                 <h2 class="section-title">Contact Me</h2>
@@ -487,12 +612,15 @@
             </div>
             
             <div class="row">
+                <!-- Left column: Contact information -->
                 <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
                     <div class="contact-info">
                         <h3>Let's Work Together</h3>
                         <p>Feel free to reach out if you have any questions or want to collaborate on a project.</p>
                         
+                        <!-- Contact details list -->
                         <div class="contact-details">
+                            <!-- Email contact -->
                             <div class="contact-item">
                                 <div class="contact-icon">
                                     <i class="fas fa-envelope"></i>
@@ -503,6 +631,7 @@
                                 </div>
                             </div>
                             
+                            <!-- LinkedIn contact -->
                             <div class="contact-item">
                                 <div class="contact-icon">
                                     <i class="fab fa-linkedin-in"></i>
@@ -513,6 +642,7 @@
                                 </div>
                             </div>
                             
+                            <!-- GitHub contact -->
                             <div class="contact-item">
                                 <div class="contact-icon">
                                     <i class="fab fa-github"></i>
@@ -524,6 +654,7 @@
                             </div>
                         </div>
                         
+                        <!-- Social media links -->
                         <div class="social-links">
                             <a href="mailto:bhandariprajjwol094@gmail.com" class="social-link" title="Email">
                                 <i class="fas fa-envelope"></i>
@@ -544,8 +675,10 @@
                     </div>
                 </div>
                 
+                <!-- Right column: Contact form -->
                 <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <form class="contact-form" id="contactForm">
+                        <!-- Name and Email row -->
                         <div class="form-row">
                             <div class="form-group">
                                 <input type="text" id="name" class="form-input" placeholder=" " required>
@@ -556,14 +689,17 @@
                                 <label for="email" class="form-label">Your Email</label>
                             </div>
                         </div>
+                        <!-- Subject field -->
                         <div class="form-group">
                             <input type="text" id="subject" class="form-input" placeholder=" " required>
                             <label for="subject" class="form-label">Subject</label>
                         </div>
+                        <!-- Message textarea -->
                         <div class="form-group">
                             <textarea id="message" class="form-input" placeholder=" " required></textarea>
                             <label for="message" class="form-label">Your Message</label>
                         </div>
+                        <!-- Submit button -->
                         <button type="submit" class="btn-submit">
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
@@ -575,15 +711,18 @@
     </section>
 
 
-    <!-- Footer -->
+    <!--  FOOTER   -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Footer logo -->
                 <div class="footer-logo">
                     <span class="brand-text">Prajjwol</span>
                     <span class="brand-dot">.</span>
                 </div>
+                <!-- Copyright notice -->
                 <p class="footer-text">© 2026 Prajjwol Bhandari. All Rights Reserved.</p>
+                <!-- Social links -->
                 <div class="footer-social">
                     <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
@@ -594,11 +733,12 @@
     </footer>
 
 
-    <!-- Scroll to Top Button -->
+    <!-- SCROLL TO TOP BUTTON -->
     <button class="scroll-to-top" id="scrollToTop">
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>

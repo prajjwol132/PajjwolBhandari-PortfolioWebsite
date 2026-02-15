@@ -1,110 +1,170 @@
+/**
+ * ============================================
+ * PORTFOLIO WEBSITE - MAIN STYLESHEET
+ * ============================================
+ * This file contains all the styling for the portfolio website
+ * including layout, colors, typography, animations, and responsive design.
+ * 
+ * Color Scheme:
+ * - Primary (Gold): #F0BE6F
+ * - Secondary (Dark Teal): #1B4543
+ * - Accent (Light Teal): #B3D0C6
+ * - Dark: #0a1f1d
+ * - Light: #f8faf9
+ */
 
+/* ===========================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   ===========================================
+   Define reusable color values and gradients
+   for consistent styling throughout the website.
+*/
 :root {
-    --primary: #F0BE6F;
-    --secondary: #1B4543;
-    --accent: #B3D0C6;
-    --dark: #0a1f1d;
-    --light: #f8faf9;
-    --white: #ffffff;
-    --gray: #6c757d;
-    --gradient-dark: linear-gradient(135deg, #1B4543 0%, #0a1f1d 100%);
-    --gradient-gold: linear-gradient(135deg, #F0BE6F 0%, #d4a84b 100%);
-    --gradient-accent: linear-gradient(135deg, #B3D0C6 0%, #8fb3a5 100%);
+    --primary: #F0BE6F;           /* Gold color for highlights and accents */
+    --secondary: #1B4543;         /* Dark teal for headings and backgrounds */
+    --accent: #B3D0C6;            /* Light teal for secondary text and borders */
+    --dark: #0a1f1d;              /* Very dark teal for footer and text */
+    --light: #f8faf9;             /* Off-white for page background */
+    --white: #ffffff;             /* Pure white for cards and text */
+    --gray: #6c757d;              /* Gray for body text */
+    --gradient-dark: linear-gradient(135deg, #1B4543 0%, #0a1f1d 100%);  /* Dark gradient for backgrounds */
+    --gradient-gold: linear-gradient(135deg, #F0BE6F 0%, #d4a84b 100%);  /* Gold gradient for buttons */
+    --gradient-accent: linear-gradient(135deg, #B3D0C6 0%, #8fb3a5 100%);  /* Accent gradient */
 }
 
 
+/* ===========================================
+   GLOBAL RESET & BASE STYLES
+   ===========================================
+   Reset default browser styles and set up
+   base typography and page behavior.
+*/
+
+/* Remove default margins and padding, set box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Enable smooth scrolling for anchor links */
 html {
     scroll-behavior: smooth;
 }
 
+/* Base body styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--light);
-    color: var(--dark);
-    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Primary font stack */
+    background-color: var(--light);  /* Light background color */
+    color: var(--dark);              /* Default text color */
+    overflow-x: hidden;              /* Prevent horizontal scroll */
 }
 
 
+/* ===========================================
+   SCROLL PROGRESS BAR
+   ===========================================
+   A visual indicator at the top of the page
+   that shows scroll progress as a horizontal bar.
+*/
+
+/* Container for the progress bar - fixed at top */
 .scroll-progress-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 4px;
-    background: rgba(27, 69, 67, 0.2);
-    z-index: 10000;
+    background: rgba(27, 69, 67, 0.2);  /* Light background track */
+    z-index: 10000;                      /* Above all other elements */
 }
 
+/* The actual progress bar that fills as user scrolls */
 .scroll-progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    width: 0%;
-    transition: width 0.1s ease-out;
-    box-shadow: 0 0 10px var(--primary);
+    background: linear-gradient(90deg, var(--primary), var(--accent));  /* Gradient fill */
+    width: 0%;                        /* Initial width - updated by JavaScript */
+    transition: width 0.1s ease-out;  /* Smooth width transition */
+    box-shadow: 0 0 10px var(--primary);  /* Glow effect */
 }
 
 
+/* ===========================================
+   SCROLL ANIMATION CLASSES
+   ===========================================
+   Classes used for scroll-triggered animations.
+   Elements start hidden and animate in when scrolled into view.
+*/
+
+/* Initial state - element is hidden and shifted down */
 .scroll-animate {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+/* Animated state - element is visible and in position */
 .scroll-animated {
     opacity: 1;
     transform: translateY(0);
 }
 
-
+/* Staggered animation delay for card elements */
 .skill-card.scroll-animate,
 .project-card.scroll-animate {
     transition-delay: calc(var(--index, 0) * 0.1s);
 }
 
 
+/* ===========================================
+   FLOATING SHAPES BACKGROUND
+   ===========================================
+   Decorative animated shapes that float in the background.
+   Creates visual interest and depth.
+*/
+
+/* Container for all floating shapes */
 .floating-shapes {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: -1;
+    pointer-events: none;  /* Allow clicks to pass through */
+    z-index: -1;           /* Behind all content */
     overflow: hidden;
 }
 
+/* Base styles for each shape */
 .shape {
     position: absolute;
-    opacity: 0.1;
-    animation: float 20s infinite ease-in-out;
+    opacity: 0.1;                    /* Subtle transparency */
+    animation: float 20s infinite ease-in-out;  /* Floating animation */
 }
 
+/* Shape 1 - Large circle in top-left */
 .shape-1 {
     width: 300px;
     height: 300px;
     background: var(--primary);
-    border-radius: 50%;
+    border-radius: 50%;              /* Circle shape */
     top: 10%;
     left: 10%;
     animation-delay: 0s;
 }
 
+/* Shape 2 - Medium blob in bottom-right */
 .shape-2 {
     width: 200px;
     height: 200px;
     background: var(--secondary);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;  /* Blob shape */
     top: 60%;
     right: 10%;
     animation-delay: -5s;
 }
 
+/* Shape 3 - Small circle in bottom-left */
 .shape-3 {
     width: 150px;
     height: 150px;
@@ -115,6 +175,7 @@ body {
     animation-delay: -10s;
 }
 
+/* Shape 4 - Medium blob in center-right */
 .shape-4 {
     width: 250px;
     height: 250px;
@@ -125,6 +186,7 @@ body {
     animation-delay: -15s;
 }
 
+/* Keyframe animation for floating effect */
 @keyframes float {
     0%, 100% {
         transform: translateY(0) rotate(0deg);
@@ -141,32 +203,45 @@ body {
 }
 
 
+/* ===========================================
+   NAVIGATION BAR
+   ===========================================
+   Fixed navigation bar with logo and menu links.
+   Changes appearance on scroll.
+*/
+
+/* Main navbar container */
 .navbar {
     padding: 1rem 0;
-    background: rgba(27, 69, 67, 0.95) !important;
-    backdrop-filter: blur(10px);
+    background: rgba(27, 69, 67, 0.95) !important;  /* Semi-transparent dark teal */
+    backdrop-filter: blur(10px);                     /* Blur effect for modern look */
     transition: all 0.3s ease;
     z-index: 1000;
 }
 
+/* Scrolled state - more compact with shadow */
 .navbar.scrolled {
     padding: 0.5rem 0;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Brand/logo styling */
 .navbar-brand {
     font-size: 1.8rem;
     font-weight: 700;
 }
 
+/* Brand text color */
 .brand-text {
     color: var(--white);
 }
 
+/* Decorative dot after brand name */
 .brand-dot {
     color: var(--primary);
 }
 
+/* Navigation link styling */
 .navbar-nav .nav-link {
     color: var(--white) !important;
     font-weight: 500;
@@ -175,6 +250,7 @@ body {
     transition: color 0.3s ease;
 }
 
+/* Underline effect on hover */
 .navbar-nav .nav-link::after {
     content: '';
     position: absolute;
@@ -187,25 +263,36 @@ body {
     transform: translateX(-50%);
 }
 
+/* Expand underline on hover */
 .navbar-nav .nav-link:hover::after {
     width: 80%;
 }
 
+/* Change text color on hover */
 .navbar-nav .nav-link:hover {
     color: var(--primary) !important;
 }
 
 
+/* ===========================================
+   HERO SECTION
+   ===========================================
+   Full-screen hero section with name, typing effect,
+   profile image, and rotating decorative circle.
+*/
+
+/* Hero section container */
 .hero {
-    min-height: 100vh;
+    min-height: 100vh;               /* Full viewport height */
     display: flex;
     align-items: center;
-    background: var(--gradient-dark);
+    background: var(--gradient-dark);  /* Dark gradient background */
     position: relative;
     overflow: hidden;
     padding: 100px 0 50px;
 }
 
+/* Gradient overlay for depth */
 .hero::before {
     content: '';
     position: absolute;
@@ -219,6 +306,7 @@ body {
         radial-gradient(circle at 40% 80%, rgba(240, 190, 111, 0.05) 0%, transparent 30%);
 }
 
+/* Main content wrapper - flexbox layout */
 .hero-content {
     display: flex;
     align-items: center;
@@ -231,11 +319,13 @@ body {
     z-index: 1;
 }
 
+/* Text content section */
 .hero-text {
     flex: 1;
     color: var(--white);
 }
 
+/* Greeting text above name */
 .hero-greeting {
     font-size: 1.2rem;
     color: var(--primary);
@@ -243,6 +333,7 @@ body {
     font-weight: 500;
 }
 
+/* Main name heading with gradient text */
 .hero-name {
     font-size: 4rem;
     font-weight: 800;
@@ -250,31 +341,36 @@ body {
     line-height: 1.1;
     background: linear-gradient(135deg, var(--white) 0%, var(--primary) 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;  /* Gradient text effect */
     background-clip: text;
 }
 
+/* Container for typing effect */
 .hero-typing {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     min-height: 2rem;
 }
 
+/* Typed text styling */
 .typed-text {
     color: var(--accent);
     font-weight: 500;
 }
 
+/* Blinking cursor animation */
 .cursor {
     animation: blink 1s infinite;
     color: var(--primary);
 }
 
+/* Cursor blink keyframes */
 @keyframes blink {
     0%, 50% { opacity: 1; }
     51%, 100% { opacity: 0; }
 }
 
+/* Description text below typing */
 .hero-description {
     font-size: 1.1rem;
     color: var(--accent);
@@ -282,16 +378,18 @@ body {
     max-width: 500px;
 }
 
+/* Container for CTA buttons */
 .hero-buttons {
     display: flex;
     gap: 1rem;
 }
 
+/* Primary button (gold gradient) */
 .btn-primary-custom {
     padding: 1rem 2rem;
     background: var(--gradient-gold);
     border: none;
-    border-radius: 50px;
+    border-radius: 50px;             /* Pill shape */
     color: var(--dark);
     font-weight: 600;
     text-decoration: none;
@@ -299,12 +397,14 @@ body {
     box-shadow: 0 5px 20px rgba(240, 190, 111, 0.3);
 }
 
+/* Primary button hover effect */
 .btn-primary-custom:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px);     /* Lift effect */
     box-shadow: 0 10px 30px rgba(240, 190, 111, 0.5);
     color: var(--dark);
 }
 
+/* Secondary button (outline style) */
 .btn-outline-custom {
     padding: 1rem 2rem;
     background: transparent;
@@ -316,6 +416,7 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Secondary button hover effect */
 .btn-outline-custom:hover {
     background: var(--accent);
     color: var(--dark);
@@ -323,6 +424,14 @@ body {
 }
 
 
+/* ===========================================
+   HERO VISUAL ELEMENTS
+   ===========================================
+   Profile image and rotating decorative circle
+   in the hero section.
+*/
+
+/* Container for visual elements */
 .hero-visual {
     flex: 1;
     display: flex;
@@ -331,15 +440,17 @@ body {
     position: relative;
 }
 
+/* Rotating decorative circle */
 .rotating-circle {
     width: 350px;
     height: 350px;
     border: 3px solid var(--primary);
     border-radius: 50%;
     position: absolute;
-    animation: rotate 20s linear infinite;
+    animation: rotate 20s linear infinite;  /* Continuous rotation */
 }
 
+/* Decorative dot on the circle */
 .rotating-circle::before {
     content: '';
     position: absolute;
@@ -350,16 +461,18 @@ body {
     height: 20px;
     background: var(--primary);
     border-radius: 50%;
-    box-shadow: 0 0 20px var(--primary);
+    box-shadow: 0 0 20px var(--primary);  /* Glow effect */
 }
 
+/* Inner rotating text container */
 .circle-inner {
     position: absolute;
     width: 100%;
     height: 100%;
-    animation: rotate-reverse 15s linear infinite;
+    animation: rotate-reverse 15s linear infinite;  /* Counter-rotation */
 }
 
+/* Position each text label around the circle */
 .circle-inner span {
     position: absolute;
     color: var(--accent);
@@ -367,21 +480,28 @@ body {
     font-size: 0.9rem;
 }
 
+/* Position: top */
 .circle-inner span:nth-child(1) { top: 10px; left: 50%; transform: translateX(-50%); }
+/* Position: right */
 .circle-inner span:nth-child(2) { right: 10px; top: 50%; transform: translateY(-50%); }
+/* Position: bottom */
 .circle-inner span:nth-child(3) { bottom: 10px; left: 50%; transform: translateX(-50%); }
+/* Position: left */
 .circle-inner span:nth-child(4) { left: 10px; top: 50%; transform: translateY(-50%); }
 
+/* Clockwise rotation animation */
 @keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
+/* Counter-clockwise rotation animation */
 @keyframes rotate-reverse {
     from { transform: rotate(360deg); }
     to { transform: rotate(0deg); }
 }
 
+/* Profile image container */
 .profile-image {
     width: 200px;
     height: 200px;
@@ -389,11 +509,12 @@ body {
     position: relative;
     z-index: 1;
     box-shadow: 0 20px 50px rgba(240, 190, 111, 0.3);
-    animation: pulse 3s ease-in-out infinite;
+    animation: pulse 3s ease-in-out infinite;  /* Subtle pulse animation */
     overflow: hidden;
     border: 4px solid var(--primary);
 }
 
+/* Profile image styling */
 .profile-img {
     width: 100%;
     height: 100%;
@@ -401,12 +522,21 @@ body {
     border-radius: 50%;
 }
 
+/* Pulse animation keyframes */
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
 }
 
 
+/* ===========================================
+   SCROLL INDICATOR
+   ===========================================
+   Animated mouse icon at bottom of hero section
+   that indicates the user should scroll down.
+*/
+
+/* Container for scroll indicator */
 .scroll-indicator {
     position: absolute;
     bottom: 30px;
@@ -416,9 +546,10 @@ body {
     flex-direction: column;
     align-items: center;
     color: var(--accent);
-    animation: bounce 2s infinite;
+    animation: bounce 2s infinite;  /* Bouncing animation */
 }
 
+/* Mouse shape container */
 .mouse {
     width: 26px;
     height: 40px;
@@ -428,6 +559,7 @@ body {
     margin-bottom: 8px;
 }
 
+/* Scroll wheel inside mouse */
 .wheel {
     width: 4px;
     height: 8px;
@@ -437,26 +569,37 @@ body {
     top: 8px;
     left: 50%;
     transform: translateX(-50%);
-    animation: scroll-wheel 2s infinite;
+    animation: scroll-wheel 2s infinite;  /* Scrolling animation */
 }
 
+/* Bounce animation keyframes */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
     40% { transform: translateX(-50%) translateY(-10px); }
     60% { transform: translateX(-50%) translateY(-5px); }
 }
 
+/* Scroll wheel animation keyframes */
 @keyframes scroll-wheel {
     0% { opacity: 1; top: 8px; }
     100% { opacity: 0; top: 25px; }
 }
 
 
+/* ===========================================
+   SECTION HEADER STYLES
+   ===========================================
+   Common header styles used across all sections
+   (About, Skills, Projects, Contact).
+*/
+
+/* Section header container */
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
 }
 
+/* Subtitle above main title */
 .section-subtitle {
     display: inline-block;
     color: var(--primary);
@@ -467,6 +610,7 @@ body {
     margin-bottom: 0.5rem;
 }
 
+/* Main section title */
 .section-title {
     font-size: 3rem;
     font-weight: 700;
@@ -474,6 +618,7 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Decorative line under title */
 .title-line {
     width: 80px;
     height: 4px;
@@ -483,35 +628,47 @@ body {
 }
 
 
+/* ===========================================
+   ABOUT SECTION
+   ===========================================
+   Section displaying personal information,
+   profile image, and experience badge.
+*/
+
+/* About section container */
 .about-section {
     padding: 100px 0;
     background: var(--white);
     position: relative;
 }
 
+/* Wrapper for about image and badge */
 .about-image-wrapper {
     position: relative;
     padding: 2rem;
 }
 
+/* Profile image container with morphing shape */
 .about-image {
     width: 100%;
     max-width: 350px;
     aspect-ratio: 1;
     background: var(--gradient-dark);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;  /* Blob shape */
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    animation: morph 8s ease-in-out infinite;
+    animation: morph 8s ease-in-out infinite;  /* Shape morphing animation */
 }
 
+/* Morphing animation keyframes */
 @keyframes morph {
     0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
     50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
 }
 
+/* Inner placeholder for image */
 .image-placeholder {
     width: 80%;
     height: 80%;
@@ -522,6 +679,7 @@ body {
     align-items: center;
 }
 
+/* Profile image in about section */
 .about-profile-img {
     width: 100%;
     height: 100%;
@@ -529,6 +687,7 @@ body {
     border-radius: inherit;
 }
 
+/* Experience badge positioned at bottom-right */
 .experience-badge {
     position: absolute;
     bottom: 0;
@@ -538,14 +697,16 @@ body {
     border-radius: 50%;
     text-align: center;
     box-shadow: 0 10px 30px rgba(240, 190, 111, 0.4);
-    animation: float-badge 3s ease-in-out infinite;
+    animation: float-badge 3s ease-in-out infinite;  /* Floating animation */
 }
 
+/* Badge floating animation */
 @keyframes float-badge {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
 }
 
+/* Large number in badge */
 .exp-number {
     display: block;
     font-size: 1.8rem;
@@ -554,6 +715,7 @@ body {
     line-height: 1;
 }
 
+/* Text below number in badge */
 .exp-text {
     display: block;
     font-size: 0.7rem;
@@ -562,22 +724,26 @@ body {
     text-transform: uppercase;
 }
 
+/* About content text styling */
 .about-content h3 {
     font-size: 1.8rem;
     color: var(--secondary);
     margin-bottom: 1.5rem;
 }
 
+/* Paragraph styling */
 .about-content p {
     color: var(--gray);
     line-height: 1.8;
     margin-bottom: 1rem;
 }
 
+/* Highlighted text in paragraphs */
 .about-content strong {
     color: var(--secondary);
 }
 
+/* Stats container */
 .about-stats {
     display: flex;
     gap: 2rem;
@@ -586,10 +752,12 @@ body {
     border-top: 1px solid var(--accent);
 }
 
+/* Individual stat item */
 .stat-item {
     text-align: center;
 }
 
+/* Stat number styling */
 .stat-number {
     display: block;
     font-size: 2.5rem;
@@ -597,31 +765,43 @@ body {
     color: var(--primary);
 }
 
+/* Stat label text */
 .stat-label {
     font-size: 0.9rem;
     color: var(--gray);
 }
 
 
+/* ===========================================
+   SKILLS SECTION
+   ===========================================
+   Grid of skill cards with progress bars
+   showing proficiency levels.
+*/
+
+/* Skills section container */
 .skills-section {
     padding: 100px 0;
     background: var(--gradient-dark);
     position: relative;
 }
 
+/* Override title color for dark background */
 .skills-section .section-title {
     color: var(--white);
 }
 
+/* Grid layout for skill cards */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
+/* Individual skill card */
 .skill-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);  /* Semi-transparent background */
+    backdrop-filter: blur(10px);             /* Glass effect */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 2rem;
@@ -630,6 +810,7 @@ body {
     overflow: hidden;
 }
 
+/* Top border animation on hover */
 .skill-card::before {
     content: '';
     position: absolute;
@@ -638,19 +819,22 @@ body {
     width: 100%;
     height: 3px;
     background: var(--gradient-gold);
-    transform: scaleX(0);
+    transform: scaleX(0);           /* Hidden initially */
     transition: transform 0.3s ease;
 }
 
+/* Hover state - lift and brighten */
 .skill-card:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.1);
 }
 
+/* Show top border on hover */
 .skill-card:hover::before {
     transform: scaleX(1);
 }
 
+/* Skill icon container */
 .skill-icon {
     width: 60px;
     height: 60px;
@@ -662,23 +846,27 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Icon styling */
 .skill-icon i {
     font-size: 1.8rem;
     color: var(--dark);
 }
 
+/* Skill title */
 .skill-card h3 {
     font-size: 1.3rem;
     color: var(--white);
     margin-bottom: 0.5rem;
 }
 
+/* Skill description */
 .skill-card p {
     color: var(--accent);
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
+/* Progress bar container */
 .skill-progress {
     width: 100%;
     height: 6px;
@@ -687,14 +875,16 @@ body {
     overflow: hidden;
 }
 
+/* Animated progress bar fill */
 .progress-bar {
     height: 100%;
     background: var(--gradient-gold);
     border-radius: 3px;
-    width: 0;
+    width: 0;                        /* Initial width - animated by JavaScript */
     transition: width 1.5s ease;
 }
 
+/* Percentage display in corner */
 .skill-percentage {
     position: absolute;
     top: 2rem;
@@ -705,11 +895,20 @@ body {
 }
 
 
+/* ===========================================
+   PROJECTS SECTION
+   ===========================================
+   Section displaying project cards organized
+   by category with tab filtering.
+*/
+
+/* Projects section container */
 .projects-section {
     padding: 100px 0;
     background: var(--white);
 }
 
+/* Tab button container */
 .project-tabs {
     display: flex;
     justify-content: center;
@@ -718,6 +917,7 @@ body {
     flex-wrap: wrap;
 }
 
+/* Individual tab button */
 .tab-btn {
     padding: 0.8rem 1.5rem;
     background: transparent;
@@ -729,6 +929,7 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Tab button hover and active states */
 .tab-btn:hover,
 .tab-btn.active {
     background: var(--primary);
@@ -736,15 +937,18 @@ body {
     color: var(--dark);
 }
 
+/* Project category container */
 .project-category {
     display: none;
     margin-bottom: 3rem;
 }
 
+/* Active category - visible */
 .project-category.active {
     display: block;
 }
 
+/* Category title with icon */
 .category-title {
     font-size: 1.5rem;
     color: var(--secondary);
@@ -754,10 +958,12 @@ body {
     gap: 1rem;
 }
 
+/* Icon in category title */
 .category-title i {
     color: var(--primary);
 }
 
+/* Project card container */
 .project-card {
     background: var(--white);
     border-radius: 20px;
@@ -768,17 +974,20 @@ body {
     height: 100%;
 }
 
+/* Project card hover effect */
 .project-card:hover {
     transform: translateY(-15px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
+/* Project thumbnail container */
 .project-thumbnail {
     position: relative;
     height: 200px;
     overflow: hidden;
 }
 
+/* Thumbnail placeholder with icon */
 .thumbnail-placeholder {
     width: 100%;
     height: 100%;
@@ -789,25 +998,30 @@ body {
     color: var(--white);
 }
 
+/* Video project thumbnail background */
 .video-project .thumbnail-placeholder {
     background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
 }
 
+/* React and web project thumbnail styling */
 .react-thumb .thumbnail-placeholder,
 .web-thumb .thumbnail-placeholder {
     font-size: 3rem;
 }
 
+/* React project specific background */
 .react-placeholder {
-    background: linear-gradient(135deg, #61DAFB 0%, #21A1CB 100%);
+    background: linear-gradient(135deg, #61DAFB 0%, #21A1CB 100%);  /* React blue */
     color: var(--white);
 }
 
+/* Web project specific background */
 .web-placeholder {
     background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
     color: var(--white);
 }
 
+/* Overlay that appears on hover */
 .project-overlay {
     position: absolute;
     top: 0;
@@ -823,10 +1037,12 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Show overlay on video project hover */
 .video-project:hover .project-overlay {
     opacity: 1;
 }
 
+/* Play button styling */
 .play-btn {
     width: 70px;
     height: 70px;
@@ -840,26 +1056,31 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Play button icon */
 .play-btn i {
     color: var(--dark);
     font-size: 1.5rem;
-    margin-left: 5px;
+    margin-left: 5px;  /* Center the play icon visually */
 }
 
+/* Play button hover effect */
 .play-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 10px 30px rgba(240, 190, 111, 0.5);
 }
 
+/* Text on overlay */
 .project-overlay span {
     color: var(--white);
     font-size: 0.9rem;
 }
 
+/* Project info section below thumbnail */
 .project-info {
     padding: 1.5rem;
 }
 
+/* Category tag styling */
 .project-category-tag {
     display: inline-block;
     padding: 0.3rem 0.8rem;
@@ -872,38 +1093,45 @@ body {
     margin-bottom: 0.8rem;
 }
 
+/* Video project tag color */
 .video-project .project-category-tag {
     background: var(--primary);
 }
 
+/* React project tag color */
 .react-project .project-category-tag {
     background: #61DAFB;
     color: #000;
 }
 
+/* Web project tag color */
 .web-project .project-category-tag {
     background: var(--primary);
     color: var(--white);
 }
 
+/* Project title */
 .project-info h4 {
     font-size: 1.2rem;
     color: var(--secondary);
     margin-bottom: 0.5rem;
 }
 
+/* Project description */
 .project-info p {
     color: var(--gray);
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
+/* Tools/technologies tags container */
 .project-tools {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
 }
 
+/* Individual tool tag */
 .project-tools span {
     padding: 0.2rem 0.6rem;
     background: var(--light);
@@ -913,10 +1141,12 @@ body {
     font-weight: 500;
 }
 
+/* Project links container */
 .project-links {
     margin-top: 1rem;
 }
 
+/* View project button */
 .btn-project {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -929,40 +1159,54 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Project button hover effect */
 .btn-project:hover {
     background: var(--primary);
     color: var(--dark);
 }
 
 
+/* ===========================================
+   CONTACT SECTION
+   ===========================================
+   Contact information and form for reaching out.
+*/
+
+/* Contact section container */
 .contact-section {
     padding: 100px 0;
     background: var(--gradient-dark);
     position: relative;
 }
 
+/* Override title color for dark background */
 .contact-section .section-title {
     color: var(--white);
 }
 
+/* Contact info container */
 .contact-info {
     color: var(--white);
 }
 
+/* Contact info heading */
 .contact-info h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
+/* Contact info paragraph */
 .contact-info > p {
     color: var(--accent);
     margin-bottom: 2rem;
 }
 
+/* Contact details container */
 .contact-details {
     margin-bottom: 2rem;
 }
 
+/* Individual contact item */
 .contact-item {
     display: flex;
     align-items: center;
@@ -970,6 +1214,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Contact icon container */
 .contact-icon {
     width: 50px;
     height: 50px;
@@ -981,11 +1226,13 @@ body {
     flex-shrink: 0;
 }
 
+/* Contact icon styling */
 .contact-icon i {
     font-size: 1.3rem;
     color: var(--primary);
 }
 
+/* Contact label text */
 .contact-text .contact-label {
     display: block;
     font-size: 0.8rem;
@@ -994,6 +1241,7 @@ body {
     margin-bottom: 0.2rem;
 }
 
+/* Contact link styling */
 .contact-text a {
     color: var(--white);
     text-decoration: none;
@@ -1001,15 +1249,18 @@ body {
     transition: color 0.3s ease;
 }
 
+/* Contact link hover effect */
 .contact-text a:hover {
     color: var(--primary);
 }
 
+/* Social links container */
 .social-links {
     display: flex;
     gap: 1rem;
 }
 
+/* Individual social link button */
 .social-link {
     width: 45px;
     height: 45px;
@@ -1023,13 +1274,21 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Social link hover effect */
 .social-link:hover {
     background: var(--primary);
     color: var(--dark);
     transform: translateY(-5px);
 }
 
-/* Contact Form */
+
+/* ===========================================
+   CONTACT FORM
+   ===========================================
+   Form for sending messages with floating labels.
+*/
+
+/* Form container with glass effect */
 .contact-form {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -1038,17 +1297,20 @@ body {
     padding: 2.5rem;
 }
 
+/* Two-column row for name and email */
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
 
+/* Form group container */
 .form-group {
     position: relative;
     margin-bottom: 1.5rem;
 }
 
+/* Form input styling */
 .form-input {
     width: 100%;
     padding: 1rem;
@@ -1060,11 +1322,13 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Input focus state */
 .form-input:focus {
     border-color: var(--primary);
     background: rgba(255, 255, 255, 0.1);
 }
 
+/* Floating label - active state */
 .form-input:focus + .form-label,
 .form-input:not(:placeholder-shown) + .form-label {
     top: -10px;
@@ -1075,6 +1339,7 @@ body {
     padding: 0 5px;
 }
 
+/* Floating label styling */
 .form-label {
     position: absolute;
     left: 1rem;
@@ -1084,11 +1349,13 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Textarea specific styling */
 textarea.form-input {
     min-height: 120px;
     resize: vertical;
 }
 
+/* Submit button */
 .btn-submit {
     width: 100%;
     padding: 1rem 2rem;
@@ -1106,47 +1373,62 @@ textarea.form-input {
     transition: all 0.3s ease;
 }
 
+/* Submit button hover effect */
 .btn-submit:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(240, 190, 111, 0.4);
 }
 
+/* Submit button icon */
 .btn-submit i {
     transition: transform 0.3s ease;
 }
 
+/* Icon animation on hover */
 .btn-submit:hover i {
     transform: translateX(5px);
 }
 
 
+/* ===========================================
+   FOOTER
+   ===========================================
+   Site footer with logo, copyright, and social links.
+*/
+
+/* Footer container */
 .footer {
     background: var(--dark);
     padding: 2rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Footer content wrapper */
 .footer-content {
     text-align: center;
 }
 
+/* Footer logo */
 .footer-logo {
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
+/* Copyright text */
 .footer-text {
     color: var(--accent);
     margin-bottom: 1.5rem;
 }
 
+/* Social links container */
 .footer-social {
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
 
+/* Social link buttons */
 .footer-social a {
     width: 40px;
     height: 40px;
@@ -1160,6 +1442,7 @@ textarea.form-input {
     transition: all 0.3s ease;
 }
 
+/* Social link hover effect */
 .footer-social a:hover {
     background: var(--primary);
     color: var(--dark);
@@ -1167,6 +1450,14 @@ textarea.form-input {
 }
 
 
+/* ===========================================
+   SCROLL TO TOP BUTTON
+   ===========================================
+   Fixed button that appears after scrolling down
+   to quickly return to the top of the page.
+*/
+
+/* Button container */
 .scroll-to-top {
     position: fixed;
     bottom: 30px;
@@ -1187,97 +1478,127 @@ textarea.form-input {
     box-shadow: 0 5px 20px rgba(240, 190, 111, 0.3);
 }
 
+/* Visible state */
 .scroll-to-top.visible {
     opacity: 1;
     visibility: visible;
 }
 
+/* Hover effect */
 .scroll-to-top:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(240, 190, 111, 0.5);
 }
 
+/* Icon styling */
 .scroll-to-top i {
     color: var(--dark);
     font-size: 1.2rem;
 }
 
 
+/* ===========================================
+   RESPONSIVE DESIGN
+   ===========================================
+   Media queries for different screen sizes.
+   Ensures the website looks good on all devices.
+*/
+
+/* Large tablets and small desktops */
 @media (max-width: 991px) {
+    /* Stack hero content vertically */
     .hero-content {
         flex-direction: column-reverse;
         text-align: center;
     }
     
+    /* Reduce hero name size */
     .hero-name {
         font-size: 2.8rem;
     }
     
+    /* Center hero buttons */
     .hero-buttons {
         justify-content: center;
     }
     
+    /* Add margin to hero visual */
     .hero-visual {
         margin-bottom: 2rem;
     }
     
+    /* Reduce rotating circle size */
     .rotating-circle {
         width: 250px;
         height: 250px;
     }
     
+    /* Reduce profile image size */
     .profile-image {
         width: 150px;
         height: 150px;
     }
     
+    /* Add margin to about image */
     .about-image-wrapper {
         margin-bottom: 2rem;
     }
     
+    /* Center stats on tablet */
     .about-stats {
         justify-content: center;
     }
 }
 
+/* Tablets and small screens */
 @media (max-width: 768px) {
+    /* Reduce section title size */
     .section-title {
         font-size: 2rem;
     }
     
+    /* Stack form fields */
     .form-row {
         grid-template-columns: 1fr;
     }
     
+    /* Reduce form padding */
     .contact-form {
         padding: 1.5rem;
     }
 }
 
+/* Mobile phones */
 @media (max-width: 576px) {
+    /* Further reduce hero name size */
     .hero-name {
         font-size: 2rem;
     }
     
+    /* Reduce typing text size */
     .hero-typing {
         font-size: 1.2rem;
     }
     
+    /* Stack hero buttons vertically */
     .hero-buttons {
         flex-direction: column;
     }
     
+    /* Full width buttons on mobile */
     .btn-primary-custom,
     .btn-outline-custom {
         width: 100%;
         text-align: center;
     }
     
+    /* Stack stats vertically */
     .about-stats {
         flex-direction: column;
         gap: 1.5rem;
     }
     
+    /* Reduce skill card padding */
     .skill-card {
         padding: 1.5rem;
     }
